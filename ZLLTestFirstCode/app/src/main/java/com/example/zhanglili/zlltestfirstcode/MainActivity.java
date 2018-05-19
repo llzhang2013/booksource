@@ -1,5 +1,6 @@
 package com.example.zhanglili.zlltestfirstcode;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -10,9 +11,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.zhanglili.zlltestfirstcode.chapter2_intent.FirstActivity;
+import com.example.zhanglili.zlltestfirstcode.chapter2_intent.ThirdActivity;
+import com.example.zhanglili.zlltestfirstcode.chapter3_List.ListActivity;
+import com.example.zhanglili.zlltestfirstcode.chapter3_List.ListRecycle;
+import com.example.zhanglili.zlltestfirstcode.chapter5_broadcast.broadcastActivity;
+
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "zlltestfirstcode";
-    private String[] items = {"listView","RecycleView","广播"};
+    private String[] items = {"listView","RecycleView","chapter2","广播"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +36,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String ss = Integer.toString(position)+","+String.valueOf(position);
-                Toast.makeText(MainActivity.this,ss,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,ss,Toast.LENGTH_LONG).show();
                 Log.d(TAG, "onItemClick: ");
+
+                switch (position){
+                    case 0:{
+                        Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    }
+                    case 1:{
+                        Intent intent = new Intent(MainActivity.this, ListRecycle.class);
+                        startActivity(intent);
+                        break;
+
+                    }
+                    case 2:{
+                        Intent intent = new Intent(MainActivity.this, FirstActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case 3:{
+                        Intent intent = new Intent(MainActivity.this, broadcastActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                }
+
             }
         });
 

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zhanglili.zlltestfirstcode">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +19,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListView"></activity>
+        <activity android:name=".chapter2_intent.FirstActivity" />
+        <activity android:name=".chapter2_intent.SecondActivity">
+            <intent-filter> <!-- 隐式调用Intent需要 -->
+                <action android:name="android.intent.action.APP_ERROR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.ZLL" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".chapter2_intent.ThirdActivity"
+            android:label="@string/title_activity_third"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".chapter3_List.ListActivity" />
+        <activity android:name=".chapter3_List.ListRecycle" />
+        <activity android:name=".chapter5_broadcast.broadcastActivity" />
+
+        <!-- 接受开机启动广播 -->
+        <receiver
+            android:name=".chapter5_broadcast.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".chapter5_broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.broadcast_ZLL_BROATCAST"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
