@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -50,9 +52,14 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.example.broadcast_ZLL_BROATCAST"/>
+                <action android:name="123" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".chapter6_ContentProvider.Main6Activity" />
+        <activity android:name=".chapter6_ContentProvider.RuntimePermissionTest" />
+        <activity android:name=".chapter6_ContentProvider.ReadContact" />
+        <activity android:name=".chapter5_broadcast.LocalBroadcast"></activity>
     </application>
 
 </manifest>

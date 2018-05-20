@@ -16,10 +16,11 @@ import com.example.zhanglili.zlltestfirstcode.chapter2_intent.ThirdActivity;
 import com.example.zhanglili.zlltestfirstcode.chapter3_List.ListActivity;
 import com.example.zhanglili.zlltestfirstcode.chapter3_List.ListRecycle;
 import com.example.zhanglili.zlltestfirstcode.chapter5_broadcast.broadcastActivity;
+import com.example.zhanglili.zlltestfirstcode.chapter6_ContentProvider.Main6Activity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "zlltestfirstcode";
-    private String[] items = {"listView","RecycleView","chapter2","广播"};
+    private String[] items = {"listView","RecycleView","chapter2","广播","chapter6_运行时权限"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +37,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String ss = Integer.toString(position)+","+String.valueOf(position);
-                Toast.makeText(MainActivity.this,ss,Toast.LENGTH_LONG).show();
+
                 Log.d(TAG, "onItemClick: ");
 
                 switch (position){
                     case 0:{
+
                         Intent intent = new Intent(MainActivity.this, ListActivity.class);
                         startActivity(intent);
                         break;
@@ -59,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case 3:{
                         Intent intent = new Intent(MainActivity.this, broadcastActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case 4:{
+                        Intent intent = new Intent(MainActivity.this, Main6Activity.class);
                         startActivity(intent);
                         break;
                     }

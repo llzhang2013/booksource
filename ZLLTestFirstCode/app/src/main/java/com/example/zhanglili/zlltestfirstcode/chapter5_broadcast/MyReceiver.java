@@ -12,7 +12,6 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.d(TAG, "onReceive:收到自己发的广播 ");
-//???TODO 研究一下context
         Toast.makeText(context,"收到自己发的广播",Toast.LENGTH_LONG).show();
     }
 }

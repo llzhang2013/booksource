@@ -6,21 +6,20 @@
 
 
     <Button
-        android:id="@+id/button5_1"
+        android:id="@+id/button6_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="发送标准自定义广播" />
+        android:text="运行时权限" />
 
     <Button
-        android:id="@+id/button5_2"
+        android:id="@+id/button6_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="去本地广播页面" />
+        android:text="读取通讯录" />
 
     <Button
-        android:id="@+id/button5_3"
+        android:id="@+id/button6_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
 </LinearLayout>
-

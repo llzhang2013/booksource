@@ -1,6 +1,7 @@
 package com.example.zhanglili.zlltestfirstcode.chapter5_broadcast;
 
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -25,21 +26,37 @@ public class broadcastActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_broadcast);
-        intentFilter = new IntentFilter();
-        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-        networkChangeReceiver = new NetworkChangeReceiver();
-        registerReceiver(networkChangeReceiver,intentFilter);
+//        intentFilter = new IntentFilter();
+//        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+//        networkChangeReceiver = new NetworkChangeReceiver();
+//        registerReceiver(networkChangeReceiver,intentFilter);
 
-        Button button = (Button)findViewById(R.id.button1);
+        Button button = (Button)findViewById(R.id.button5_1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(broadcastActivity.this,"发送广播",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent("com.example.broadcast_ZLL_BROATCAST");
+                Log.d(TAG, "onClick: 发送自定义广播");
+
+                Intent intent = new Intent("123");
+                intent.setComponent(new ComponentName("com.example.zhanglili.zlltestfirstcode","com.example.zhanglili.zlltestfirstcode.chapter5_broadcast.MyReceiver"));
                 sendBroadcast(intent);//发送自定义广播 这个intent 真是万能的
-                //???TODO  sendBroadcast是 context的方法 怎么没收到消息 奇怪
+
             }
         });
+
+
+        Button button2 = (Button)findViewById(R.id.button5_2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               //这里不能直接用this
+                Intent intent = new Intent(broadcastActivity.this,LocalBroadcast.class);
+              startActivity(intent);
+
+            }
+        });
+
+
     }
 
     @Override
