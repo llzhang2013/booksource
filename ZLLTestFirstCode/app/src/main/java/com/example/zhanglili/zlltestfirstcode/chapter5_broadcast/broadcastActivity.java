@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.zhanglili.zlltestfirstcode.R;
+import com.example.zhanglili.zlltestfirstcode.chapter5_broadcast.BroadcastBestPractice.loginActivity;
 
 public class broadcastActivity extends AppCompatActivity {
     private static final String TAG = "broadcastActivity";
@@ -52,6 +53,17 @@ public class broadcastActivity extends AppCompatActivity {
                //这里不能直接用this
                 Intent intent = new Intent(broadcastActivity.this,LocalBroadcast.class);
               startActivity(intent);
+
+            }
+        });
+
+        Button button3 = (Button)findViewById(R.id.button5_3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //这里不能直接用this
+                Intent intent = new Intent(broadcastActivity.this,loginActivity.class);
+                startActivity(intent);
 
             }
         });

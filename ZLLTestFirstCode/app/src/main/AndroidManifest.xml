@@ -59,7 +59,9 @@
         <activity android:name=".chapter6_ContentProvider.Main6Activity" />
         <activity android:name=".chapter6_ContentProvider.RuntimePermissionTest" />
         <activity android:name=".chapter6_ContentProvider.ReadContact" />
-        <activity android:name=".chapter5_broadcast.LocalBroadcast"></activity>
+        <activity android:name=".chapter5_broadcast.LocalBroadcast" />
+        <activity android:name=".chapter5_broadcast.BroadcastBestPractice.loginActivity" />
+        <activity android:name=".chapter5_broadcast.BroadcastBestPractice.ForceOffActivity"></activity>
     </application>
 
 </manifest>
