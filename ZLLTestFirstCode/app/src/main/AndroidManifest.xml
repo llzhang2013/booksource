@@ -61,7 +61,13 @@
         <activity android:name=".chapter6_ContentProvider.ReadContact" />
         <activity android:name=".chapter5_broadcast.LocalBroadcast" />
         <activity android:name=".chapter5_broadcast.BroadcastBestPractice.loginActivity" />
-        <activity android:name=".chapter5_broadcast.BroadcastBestPractice.ForceOffActivity"></activity>
+        <activity android:name=".chapter5_broadcast.BroadcastBestPractice.ForceOffActivity" />
+        <activity android:name=".chapter10_service.MainActivity10" />
+
+        <service
+            android:name=".chapter10_service.MyService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

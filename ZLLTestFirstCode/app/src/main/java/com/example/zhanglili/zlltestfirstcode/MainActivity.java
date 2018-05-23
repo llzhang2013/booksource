@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.zhanglili.zlltestfirstcode.chapter10_service.MainActivity10;
 import com.example.zhanglili.zlltestfirstcode.chapter2_intent.FirstActivity;
 import com.example.zhanglili.zlltestfirstcode.chapter2_intent.ThirdActivity;
 import com.example.zhanglili.zlltestfirstcode.chapter3_List.ListActivity;
@@ -20,7 +21,7 @@ import com.example.zhanglili.zlltestfirstcode.chapter6_ContentProvider.Main6Acti
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "zlltestfirstcode";
-    private String[] items = {"listView","RecycleView","chapter2","广播","chapter6_运行时权限"};
+    private String[] items = {"listView","RecycleView","chapter2","广播","chapter6_运行时权限","chapter10_service"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case 4:{
                         Intent intent = new Intent(MainActivity.this, Main6Activity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case 5:{
+                        Intent intent = new Intent(MainActivity.this, MainActivity10.class);
                         startActivity(intent);
                         break;
                     }
