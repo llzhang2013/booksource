@@ -4,12 +4,15 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.example.zhanglili.zlltestfirstcode.MainActivity;
+import com.example.zhanglili.zlltestfirstcode.R;
 
 public class MyService extends Service {
     private static final String TAG = "MyService";
@@ -36,12 +39,22 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         Log.d(TAG, "onCreate: ");
-        super.onCreate();
+
 
         //使变为前台服务  TODO 这里也可以使用this
         Intent intent = new Intent(this, MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this,1,intent,0);
-        Notification notification = new Notification.Builder(this,"1");
+        Notification notification =new NotificationCompat.Builder(this,"default")
+                .setContentTitle("测试notification")
+                .setContentText("This is content text")
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher))
+                .setContentIntent(pi)
+                .build();
+        startForeground(1,notification);
+        super.onCreate();
+
 
 
     }

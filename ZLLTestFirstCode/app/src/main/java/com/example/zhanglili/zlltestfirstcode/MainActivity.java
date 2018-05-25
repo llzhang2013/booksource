@@ -18,10 +18,11 @@ import com.example.zhanglili.zlltestfirstcode.chapter3_List.ListActivity;
 import com.example.zhanglili.zlltestfirstcode.chapter3_List.ListRecycle;
 import com.example.zhanglili.zlltestfirstcode.chapter5_broadcast.broadcastActivity;
 import com.example.zhanglili.zlltestfirstcode.chapter6_ContentProvider.Main6Activity;
+import com.example.zhanglili.zlltestfirstcode.chapter8_notify.MainActivity8;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "zlltestfirstcode";
-    private String[] items = {"listView","RecycleView","chapter2","广播","chapter6_运行时权限","chapter10_service"};
+    private String[] items = {"listView","RecycleView","chapter2","广播","chapter6_运行时权限","chapter10_service","chapter8_notify"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case 5:{
                         Intent intent = new Intent(MainActivity.this, MainActivity10.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case 6:{
+                        Intent intent = new Intent(MainActivity.this, MainActivity8.class);
                         startActivity(intent);
                         break;
                     }

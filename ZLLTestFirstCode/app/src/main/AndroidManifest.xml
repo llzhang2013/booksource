@@ -67,7 +67,10 @@
         <service
             android:name=".chapter10_service.MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".chapter8_notify.MainActivity8" />
+        <activity android:name=".chapter8_notify.NotifyActivity"></activity>
     </application>
 
 </manifest>
